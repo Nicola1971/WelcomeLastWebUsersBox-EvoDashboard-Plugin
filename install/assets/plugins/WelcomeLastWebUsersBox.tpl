@@ -11,14 +11,14 @@
  * @internal    @events OnManagerWelcomeHome,OnManagerWelcomeRender
  * @internal    @installset base
  * @internal    @modx_category Welcome
- * @internal    @properties  &LastUsersMode= Last User Box mode:;list;basic,advanced;advanced &LastUsersEvoEvent= Last User Box placement:;list;OnManagerWelcomeHome,OnManagerWelcomeRender;OnManagerWelcomeRender &LastUsersBoxSize= Last User Box size:;list;dashboard-block-full,dashboard-block-half;dashboard-block-half &LastUsersBoxTitle=Edit List documents Title:;string;Latest Registered Users &LastUsersLimit=How many users:;string;10
+ * @internal    @properties  &LastUsersMode= Last User Box mode:;list;basic,advanced;advanced &LastUsersEvoEvent= Last User Box placement:;list;OnManagerWelcomeHome,OnManagerWelcomeRender;OnManagerWelcomeRender &LastUsersBoxSize= Last User Box size:;list;dashboard-block-full,dashboard-block-half;dashboard-block-half &LastUsersBoxTitle=Edit List documents Title:;string;Last Registered Users &LastUsersLimit=How many users:;string;10
  */
 
 /******
 WelcomeLastWebUsersBox 1.0 RC
 OnManagerWelcomeHome,OnManagerWelcomeRender
 
-&LastUsersMode= Last User Box mode:;list;basic,advanced;advanced &LastUsersEvoEvent= Last User Box placement:;list;OnManagerWelcomeHome,OnManagerWelcomeRender;OnManagerWelcomeRender &LastUsersBoxSize= Last User Box size:;list;dashboard-block-full,dashboard-block-half;dashboard-block-half &LastUsersBoxTitle=Edit List documents Title:;string;Latest Registered Users &LastUsersLimit=How many users:;string;10
+&LastUsersMode= Last User Box mode:;list;basic,advanced;advanced &LastUsersEvoEvent= Last User Box placement:;list;OnManagerWelcomeHome,OnManagerWelcomeRender;OnManagerWelcomeRender &LastUsersBoxSize= Last User Box size:;list;dashboard-block-full,dashboard-block-half;dashboard-block-half &LastUsersBoxTitle=Edit List documents Title:;string;Last Registered Users &LastUsersLimit=How many users:;string;10
 ****
 */
 //blocks
