@@ -1,7 +1,16 @@
 WelcomeLastWebUsersBox-OMWC-Plugin for MODx Evolution
 ==================================
 
-"Last Registered Webusers" box widget for OnManagerWelcomeCustom Dashboard
+"Last Registered Webusers" box widget for OnManagerWelcomeCustom Dashboard.
+
+Quickly view and edit the latest registered Webusers on your Modx Evolution Dashboard.
+
+* Last WebUser Box mode:: advanced (display fullname, email and edit button) basic (display only username)
+* Last WebUser Box placement: OnManagerWelcomeHome or OnManagerWelcomeRender
+* Last WebUser Box size:  half / full
+* Box Title: default value "Last Registered Users"
+* How many users: default value 10
+* Enable popup icon: open the webuser page in a popup window
 
 requires: OnManagerWelcomeCustom Plugin https://github.com/Nicola1971/OnManagerWelcomeCustom-plugin
 
