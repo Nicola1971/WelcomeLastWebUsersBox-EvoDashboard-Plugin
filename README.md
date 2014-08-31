@@ -1,7 +1,9 @@
-WelcomeLastWebUsersBox-OMWC-Plugin
+WelcomeLastWebUsersBox-OMWC-Plugin for MODx Evolution
 ==================================
 
-Last registered webusers box widget for OnManagerWelcomeCustom
+"Last Registered Webusers" box widget for OnManagerWelcomeCustom Dashboard
+
+requires: OnManagerWelcomeCustom Plugin https://github.com/Nicola1971/OnManagerWelcomeCustom-plugin
 
 ##Last registered webusers box
 ![last registered user](https://raw.githubusercontent.com/Nicola1971/WelcomeLastWebUsersBox-OMWC-Plugin/master/lastuserbox.jpg)
