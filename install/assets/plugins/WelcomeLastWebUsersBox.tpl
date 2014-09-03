@@ -11,14 +11,14 @@
  * @internal    @events OnManagerWelcomeHome,OnManagerWelcomeRender
  * @internal    @installset base
  * @internal    @modx_category Welcome
- * @internal    @properties  &LastUsersMode= Last User Box mode:;list;basic,advanced;advanced &LastUsersEvoEvent= Last User Box placement:;list;OnManagerWelcomeHome,OnManagerWelcomeRender;OnManagerWelcomeRender &LastUsersBoxSize= Last User Box size:;list;dashboard-block-full,dashboard-block-half;dashboard-block-half &LastUsersBoxTitle=Edit List documents Title:;string;Last Registered Users &LastUsersLimit=How many users:;string;10 &EnablePopup= Edit in a popup:;list;no,yes;no
+ * @internal    @properties  &LastUsersMode= Last WebUser Box mode:;list;basic,advanced;advanced &LastUsersEvoEvent= Last WebUser Box placement:;list;OnManagerWelcomeHome,OnManagerWelcomeRender;OnManagerWelcomeRender &LastUsersBoxSize= Last WebUser Box size:;list;dashboard-block-full,dashboard-block-half;dashboard-block-half &LastUsersBoxTitle=Box Title:;string;Last Registered Users &LastUsersLimit=How many users:;string;10 &EnablePopup= Enable popup icon:;list;no,yes;yes
  */
 
 /******
 WelcomeLastWebUsersBox 1.1 RC
 OnManagerWelcomeHome,OnManagerWelcomeRender
 
-&LastUsersMode= Last User Box mode:;list;basic,advanced;advanced &LastUsersEvoEvent= Last User Box placement:;list;OnManagerWelcomeHome,OnManagerWelcomeRender;OnManagerWelcomeRender &LastUsersBoxSize= Last User Box size:;list;dashboard-block-full,dashboard-block-half;dashboard-block-half &LastUsersBoxTitle=Edit List documents Title:;string;Last Registered Users &LastUsersLimit=How many users:;string;10 &EnablePopup= Edit in a popup:;list;no,yes;no
+&LastUsersMode= Last WebUser Box mode:;list;basic,advanced;advanced &LastUsersEvoEvent= Last WebUser Box placement:;list;OnManagerWelcomeHome,OnManagerWelcomeRender;OnManagerWelcomeRender &LastUsersBoxSize= Last WebUser Box size:;list;dashboard-block-full,dashboard-block-half;dashboard-block-half &LastUsersBoxTitle=Box Title:;string;Last Registered Users &LastUsersLimit=How many users:;string;10 &EnablePopup= Enable popup icon:;list;no,yes;yes
 ****
 */
 //blocks
