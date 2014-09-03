@@ -21,9 +21,9 @@ Quickly view and edit the latest registered Webusers on your Modx Evolution Dash
 requires: OnManagerWelcomeCustom Plugin https://github.com/Nicola1971/OnManagerWelcomeCustom-plugin
 
 ##Last registered webusers box
-![last registered user](https://raw.githubusercontent.com/Nicola1971/WelcomeLastWebUsersBox-OMWC-Plugin/master/lastuserbox.jpg)
+![last registered user](https://raw.githubusercontent.com/Nicola1971/training-materials/master/Images/lastuser/lastuserbox.jpg)
 
 ##Last registered webusers box with popup option
-![last registered popup](https://raw.githubusercontent.com/Nicola1971/WelcomeLastWebUsersBox-OMWC-Plugin/master/lastuserbox-popup.jpg)
+![last registered popup](https://raw.githubusercontent.com/Nicola1971/training-materials/master/Images/lastuser/lastuserbox-popup.jpg)
 
-![last registered popup 2](https://raw.githubusercontent.com/Nicola1971/WelcomeLastWebUsersBox-OMWC-Plugin/master/lastuserbox-popup-open.jpg)
+![last registered popup 2](https://raw.githubusercontent.com/Nicola1971/training-materials/master/Images/lastuser/lastuserbox-popup-open.jpg)
