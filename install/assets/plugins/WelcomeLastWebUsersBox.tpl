@@ -2,7 +2,7 @@
 /**
  * WelcomeLastWebUsersBox
  *
- * Last registered webusers box widget for OnManagerWelcomeCustom
+ * Last registered webusers box widget for EvoDashboard
  *
  * @author    Nicola Lambathakis http://www.tattoocms.it
  * @category    plugin
