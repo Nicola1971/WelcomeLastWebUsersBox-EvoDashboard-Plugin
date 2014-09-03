@@ -1,7 +1,13 @@
 WelcomeLastWebUsersBox-OMWC-Plugin for MODx Evolution
 ==================================
 
-"Last Registered Webusers" box widget for OnManagerWelcomeCustom Dashboard.
+"Last Registered Webusers" box widget for for EvoDashboard and OnManagerWelcomeCustom
+
+requires: 
+EvoDashboard: https://github.com/Nicola1971/EvoDashboard-plugin
+or 
+OnManagerWelcomeCustom Plugin https://github.com/Nicola1971/OnManagerWelcomeCustom-plugin
+
 
 Quickly view and edit the latest registered Webusers on your Modx Evolution Dashboard.
 
