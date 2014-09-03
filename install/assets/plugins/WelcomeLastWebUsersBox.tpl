@@ -10,7 +10,7 @@
  * @license	 http://www.gnu.org/copyleft/gpl.html GNU Public License (GPL)
  * @internal    @events OnManagerWelcomeHome,OnManagerWelcomeRender
  * @internal    @installset base
- * @internal    @modx_category Welcome
+ * @internal    @modx_category Dashboard
  * @internal    @properties  &LastUsersMode= Last WebUser Box mode:;list;basic,advanced;advanced &LastUsersEvoEvent= Last WebUser Box placement:;list;OnManagerWelcomeHome,OnManagerWelcomeRender;OnManagerWelcomeRender &LastUsersBoxSize= Last WebUser Box size:;list;dashboard-block-full,dashboard-block-half;dashboard-block-half &LastUsersBoxTitle=Box Title:;string;Last Registered Users &LastUsersLimit=How many users:;string;10 &EnablePopup= Enable popup icon:;list;no,yes;yes
  */
 
