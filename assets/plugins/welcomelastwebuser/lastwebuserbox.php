@@ -43,11 +43,11 @@ $LastUsersOutput = '<div class="'.$LastUsersBoxWidth.'"><div class="widget-wrapp
 while( $row = $modx->db->getRow( $result ) ) {
 
 	if ($EnablePopup == yes) {
-	$LastUsers .= '<tr><td width="25%"><i class="fa fa-user icon-color-light-green icon-no-border"></i>  <b>' . $row['fullname']. '</td><td></b> (' . $row['id'] . ') - ' . $row['email'] . '  </td><td width="5%">
+	$LastUsers .= '<tr><td width="25%"><i class="fa fa-user icon-color-light-green icon-no-border"></i>   <b>' . $row['fullname']. '</td><td></b> (' . $row['id'] . ') - ' . $row['email'] . '  </td><td width="5%">
 	<a onclick="window.open(\'index.php?a=88&id=' . $row['id'] . '\',\'WebUser\',\'width=800,height=600,top=\'+((screen.height-600)/2)+\',left=\'+((screen.width-800)/2)+\',toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=yes,resizable=no\')" style="cursor: pointer;"> <i class="fa fa-external-link icon-color-red icon-no-border"></i> </a> </td></tr>';
 	}
 	if ($EnablePopup == no) {
-	$LastUsers .= '<tr><td width="25%"><i class="fa fa-user"></i><b>' . $row['fullname']. '</td><td></b> (' . $row['id'] . ') - ' . $row['email'] . ' <a href="index.php?a=88&id=' . $row['id'] . ' "></td><td width="5%"><i class="fa fa-pencil-square-o icon-color-red icon-no-border"></i></a></td></tr>';
+	$LastUsers .= '<tr><td width="25%"><i class="fa fa-user icon-color-light-green icon-no-border"></i>   <b>' . $row['fullname']. '</td><td></b> (' . $row['id'] . ') - ' . $row['email'] . ' <a href="index.php?a=88&id=' . $row['id'] . ' "></td><td width="5%"><i class="fa fa-pencil-square-o icon-color-red icon-no-border"></i></a></td></tr>';
 	}
 }
 
