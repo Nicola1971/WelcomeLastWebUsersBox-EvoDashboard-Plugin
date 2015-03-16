@@ -52,7 +52,7 @@ while( $row = $modx->db->getRow( $result ) ) {
 }
 
 $LastUsersOutput = '<div class="'.$LastUsersBoxWidth.'"><div class="widget-wrapper"> <div class="widget-title sectionHeader"><i class="fa fa-users"></i> '.$LastUsersBoxTitle.'</div>
-<div id="idShowLastUsersBox" class="widget-stage sectionBody"><table class="table table-hover table-condensed">'.$LastUsers.'</table><br style="clear:both;height:1px;margin-top: -1px;line-height:1px;font-size:1px;" /> </div></div></div>';
+<div id="idShowLastUsersBox" class="widget-stage sectionBody overflowscroll"><table class="table table-hover table-condensed">'.$LastUsers.'</table><br style="clear:both;height:1px;margin-top: -1px;line-height:1px;font-size:1px;" /> </div></div></div>';
 	}
 $output = $LastUsersOutput;
 break;
