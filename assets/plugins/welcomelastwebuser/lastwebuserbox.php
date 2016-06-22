@@ -1,25 +1,28 @@
 <?php
 /******
-WelcomeListBox 2.1 RC
-OnManagerWelcomeHome,OnManagerWelcomeRender
+WelcomeListBox  3.0 RC
+OnManagerWelcomeHome
 
-&ListBoxEvoEvent= List Box placement:;list;OnManagerWelcomePrerender,OnManagerWelcomeHome,OnManagerWelcomeRender;OnManagerWelcomeHome &ListBoxSize= List Box size:;list;dashboard-block-full,dashboard-block-half;dashboard-block-half &ListMode= List Box mode:;list;basic,advanced;advanced &ListBoxTitle=Edit List documents Title:;string;List Box Widget &ParentFolder=Parent folder for List documents:;string;2 &ListItems=Max items in List:;string;20 &hideFolders= Hide Folders from List:;list;yes,no;no &dittolevel= Depht:;string;1
+&WidgetTitle=Box Title:;string;Last Registered Users &LastUsersMode= Last WebUser Box mode:;list;basic,advanced;advanced &LastUsersLimit=How many users:;string;10 &EnablePopup= Enable popup icon:;list;no,yes;yes &datarow=widget row position:;list;1,2,3,4,5,6,7,8,9,10;1 &datacol=widget col position:;list;1,2,3,4;1 &datasizex=widget x size:;list;1,2,3,4;4 &datasizey=widget y size:;list;1,2,3,4,5,6,7,8,9,10;2
 ****
 */
-//blocks
-$LastUsersOutput = isset($LastUsersOutput) ? $LastUsersOutput : '';
-//events
-$LastUsersEvoEvent = isset($LastUsersEvoEvent) ? $LastUsersEvoEvent : 'OnManagerWelcomeRender';
-// box size
-$LastUsersBoxSize = isset($LastUsersBoxSize) ? $LastUsersBoxSize : 'dashboard-block-full';
-//widget grid size
-if ($LastUsersBoxSize == 'dashboard-block-full') {
-$LastUsersBoxWidth = 'col-sm-12';
-} else {
-$LastUsersBoxWidth = 'col-sm-6';
-}
+//widget name
+$WidgetID = isset($WidgetID) ? $WidgetID : 'LastWebUserBox';
+// size and position
+$datarow = isset($datarow) ? $datarow : '1';
+$datacol = isset($datacol) ? $datacol : '2';
+$datasizex = isset($datasizex) ? $datasizex : '2';
+$datasizey = isset($datasizey) ? $datasizey : '4';
+//output
+$WidgetOutput = isset($WidgetOutput) ? $WidgetOutput : '';
 // popup
 $EnablePopup = isset($EnablePopup) ? $EnablePopup : 'no';
+//events
+$EvoEvent = isset($EvoEvent) ? $EvoEvent : 'OnManagerWelcomeHome';
+$output = "";
+$e = &$modx->Event;
+
+
 
 $webuserstable = $modx->getFullTableName('web_users');
 $webuserattribstable = $modx->getFullTableName('web_user_attributes');
@@ -27,34 +30,67 @@ $e = &$modx->Event;
 $output ='';
 
 switch($e->name) {
-    case ''.$LastUsersEvoEvent.'':
+    case ''.$EvoEvent.'':
 	if ($LastUsersMode == basic) {
 	$result = $modx->db->query( 'SELECT id, username FROM '.$webuserstable.' ORDER BY id DESC LIMIT '.$LastUsersLimit.' ' );
 
 while( $row = $modx->db->getRow( $result ) ) {
-	$LastUsers .= '<tr><td><i class="fa fa-user"></i>  <b>' . $row['username'] . '</b> (' . $row['id'] . ') <a href="index.php?a=88&id=' . $row['id'] . ' "><i class="fa fa-pencil-square-o icon-color-red icon-no-border"></i></a></td></tr>';
+	$LastUsersB .= '<tr><td><i class="fa fa-user"></i>  <b>' . $row['username'] . '</b> (' . $row['id'] . ') <a href="index.php?a=88&id=' . $row['id'] . ' "><i class="fa fa-pencil-square-o icon-color-red icon-no-border"></i></a></td></tr>';
 }
-$LastUsersOutput = '<div class="'.$LastUsersBoxWidth.'"><div class="widget-wrapper"> <div class="widget-title sectionHeader"><i class="fa fa-users"></i> '.$LastUsersBoxTitle.'</div>
-<div id="idShowLastUsersBox" class="widget-stage sectionBody"><ul>'.$LastUsers.'</ul><br style="clear:both;height:1px;margin-top: -1px;line-height:1px;font-size:1px;" /> </div></div></div>';
-	}
+$WidgetOutput = '<li id="'.$WidgetID.'" data-row="'.$datarow.'" data-col="'.$datacol.'" data-sizex="'.$datasizex.'" data-sizey="'.$datasizey.'">
+                    <div class="panel panel-default widget-wrapper">
+                      <div class="panel-headingx widget-title sectionHeader clearfix">
+                          <span class="pull-left"><i class="fa fa-users"></i> '.$WidgetTitle.'</span>
+                            <div class="widget-controls pull-right">
+                                <div class="btn-group">
+                                    <a href="#" class="btn btn-default btn-xs panel-hide hide-full glyphicon glyphicon-minus" data-id="'.$WidgetID.'"></a>
+                                </div>     
+                            </div>
+
+                      </div>
+                      <div class="panel-body widget-stage sectionBody">
+                       <table class="table table-hover table-condensed">'.$LastUsersB.'</table>
+                      </div>
+                    </div>           
+                </li>';
+	};
+    
 	if ($LastUsersMode == advanced) {
 	$result = $modx->db->query( 'SELECT id, fullname, email FROM '.$webuserattribstable.' ORDER BY id DESC LIMIT '.$LastUsersLimit.' ' );
 
 while( $row = $modx->db->getRow( $result ) ) {
 
 	if ($EnablePopup == yes) {
-	$LastUsers .= '<tr><td width="25%"><i class="fa fa-user icon-color-light-green icon-no-border"></i>   <b>' . $row['fullname']. '</td><td></b> (' . $row['id'] . ') - ' . $row['email'] . '  </td><td width="5%">
+	$LastUsersA .= '<tr><td width="25%"><i class="fa fa-user icon-color-light-green icon-no-border"></i>   <b>' . $row['fullname']. '</td><td></b> (' . $row['id'] . ') - ' . $row['email'] . '  </td><td width="5%">
 	<a onclick="window.open(\'index.php?a=88&id=' . $row['id'] . '\',\'WebUser\',\'width=800,height=600,top=\'+((screen.height-600)/2)+\',left=\'+((screen.width-800)/2)+\',toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=yes,resizable=no\')" style="cursor: pointer;"> <i class="fa fa-external-link icon-color-red icon-no-border"></i> </a> </td></tr>';
 	}
 	if ($EnablePopup == no) {
-	$LastUsers .= '<tr><td width="25%"><i class="fa fa-user icon-color-light-green icon-no-border"></i>   <b>' . $row['fullname']. '</td><td></b> (' . $row['id'] . ') - ' . $row['email'] . ' <a href="index.php?a=88&id=' . $row['id'] . ' "></td><td width="5%"><i class="fa fa-pencil-square-o icon-color-red icon-no-border"></i></a></td></tr>';
+	$LastUsersA .= '<tr><td width="25%"><i class="fa fa-user icon-color-light-green icon-no-border"></i>   <b>' . $row['fullname']. '</td><td></b> (' . $row['id'] . ') - ' . $row['email'] . ' <a href="index.php?a=88&id=' . $row['id'] . ' "></td><td width="5%"><i class="fa fa-pencil-square-o icon-color-red icon-no-border"></i></a></td></tr>';
 	}
 }
 
-$LastUsersOutput = '<div class="'.$LastUsersBoxWidth.'"><div class="widget-wrapper"> <div class="widget-title sectionHeader"><i class="fa fa-users"></i> '.$LastUsersBoxTitle.'</div>
-<div id="idShowLastUsersBox" class="widget-stage sectionBody overflowscroll"><table class="table table-hover table-condensed">'.$LastUsers.'</table><br style="clear:both;height:1px;margin-top: -1px;line-height:1px;font-size:1px;" /> </div></div></div>';
-	}
-$output = $LastUsersOutput;
+$WidgetOutput = '
+<li id="'.$WidgetID.'" data-row="'.$datarow.'" data-col="'.$datacol.'" data-sizex="'.$datasizex.'" data-sizey="'.$datasizey.'">
+                    <div class="panel panel-default widget-wrapper">
+                      <div class="panel-headingx widget-title sectionHeader clearfix">
+                          <span class="pull-left"><i class="fa fa-users"></i> '.$WidgetTitle.'</span>
+                            <div class="widget-controls pull-right">
+                                <div class="btn-group">
+                                    <a href="#" class="btn btn-default btn-xs panel-hide hide-full glyphicon glyphicon-minus" data-id="'.$WidgetID.'"></a>
+                                </div>     
+                            </div>
+
+                      </div>
+                      <div class="panel-body widget-stage sectionBody">
+                       <table class="table table-hover table-condensed">'.$LastUsersA.'</table>
+                      </div>
+                    </div>           
+                </li>
+
+';
+}
+//end widget
+$output = $WidgetOutput;
 break;
 default:
 $output = '';
