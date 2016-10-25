@@ -12,7 +12,7 @@ global $_lang;
 $WidgetID = isset($WidgetID) ? $WidgetID : 'LastWebUserBox';
 // size and position
 $datarow = isset($datarow) ? $datarow : '1';
-$datacol = isset($datacol) ? $datacol : '2';
+$datacol = isset($datacol) ? $datacol : '3';
 $datasizex = isset($datasizex) ? $datasizex : '2';
 $datasizey = isset($datasizey) ? $datasizey : '4';
 //output
@@ -67,32 +67,32 @@ while( $row = $modx->db->getRow( $result ) ) {
 $LastUsersA .= '<td data-toggle="collapse" data-target=".collapse-user' . $row['id'] . '" width="5%"><span class="label label-info">' . $row['id'] . '</span> </td><td><a href="index.php?a=88&id=' . $row['id'] . ' "><b>' . $row['username']. '</b></a></td>  <td>' . $row['fullname']. '</td><td>' . $row['email'] . '  </td><td class="text-right" style="text-align: right;">';
  }    
    if ($EnablePopup == yes) {
-	$LastUsersA .= '<a class="btn btn-success btn-xs" onclick="window.open(\'index.php?a=88&id=' . $row['id'] . '\',\'WebUser\',\'width=800,height=600,top=\'+((screen.height-600)/2)+\',left=\'+((screen.width-800)/2)+\',toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=yes,resizable=no\')" style="cursor: pointer;"> <i class="fa fa-external-link"></i> </a>';
+	$LastUsersA .= '<a class="btn btn-success btn-xs btn-action" onclick="window.open(\'index.php?a=88&id=' . $row['id'] . '\',\'WebUser\',\'width=800,height=600,top=\'+((screen.height-600)/2)+\',left=\'+((screen.width-800)/2)+\',toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=yes,resizable=no\')" style="cursor: pointer;"> <i class="fa fa-external-link"></i> </a> ';
 	}
 	if ($EnablePopup == no) {
 	$LastUsersA .= '
 	<a class="btn btn-success btn-xs btn-action" href="index.php?a=88&id=' . $row['id'] . ' "><i class="fa fa-pencil-square-o"></i></a> ';
 }
 	if ($showDeleteButton == yes) { 
-    $LastUsersA .= ' <a class="btn btn-danger btn-xs btn-action" href="index.php?a=90&id=' . $row['id'] . ' "><i class="fa fa-trash"></i></a> ';
+    $LastUsersA .= ' <a class="btn btn-xs btn-danger btn-action" href="index.php?a=90&id=' . $row['id'] . ' "><i class="fa fa-trash"></i></a> ';
     }
     
     $LastUsersA .= '<button class="btn btn-xs btn-default btn-expand btn-action" title="' . $_lang["resource_overview"] . '" data-toggle="collapse" data-target=".collapse-user' . $row['id'] . '"><i class="fa fa-info" aria-hidden="true"></i></button></td></tr>
     <tr><td colspan="5" class="hiddenRow"><div class="resource-overview-accordian collapse collapse-user' . $row['id'] . '"><div class="overview-body small">
     <div class="col-sm-6">
     <ul class="list-group">
-    <li>' . $_lang['user_email']. ': ' . $row['email']. '</li>
-    <li>' . $_lang['user_mobile']. ': ' . $row['mobilephone']. '</li>
-    <li>' . $_lang['user_phone']. ': ' . $row['phone']. '</li>
-    <li>' . $_lang['user_gender']. ': ' . $usergender. '</li>
+    <li>' . $_lang['user_email']. ': <b>' . $row['email']. '</b></li>
+    <li>' . $_lang['user_mobile']. ': <b>' . $row['mobilephone']. '</b></li>
+    <li>' . $_lang['user_phone']. ': <b>' . $row['phone']. '</b></li>
+    <li>' . $_lang['user_gender']. ': <b>' . $usergender. '</b></li>
     </ul>
     </div>
     <div class="col-sm-6">
     <ul class="list-group">
-    <li>' . $_lang['user_city']. ': ' . $row['city']. '</li>
-    <li>' . $_lang['user_street']. ': ' . $row['street']. '</li>
-    <li>' . $_lang['user_state']. ': ' . $row['state']. '</li>
-    <li>' . $_lang['user_zip']. ': ' . $row['zip']. '</li>
+    <li>' . $_lang['user_city']. ': <b>' . $row['city']. '</b></li>
+    <li>' . $_lang['user_street']. ' : <b>' . $row['street']. '</b></li>
+    <li>' . $_lang['user_state']. ' : <b>' . $row['state']. '</b></li>
+    <li>' . $_lang['user_zip']. ': <b>' . $row['zip']. '</b></li>
     </ul>
     </div>
     </td></tr>
@@ -105,16 +105,13 @@ $WidgetOutput = '
   .table-webusers > tbody > tr > td {
   vertical-align: middle !important;
   text-align: left !important;
-  border-bottom: 1px solid #dedede;
     }
   .img-user {
   width: 60px;
   height: 60px;
   border-radius: 50%;
  }
- .table-webusers > tbody > tr > td a i {
- color: #fff;
- }
+
  .table-webusers > tbody > tr > td.text-right {
  text-align: right!important;
  }
