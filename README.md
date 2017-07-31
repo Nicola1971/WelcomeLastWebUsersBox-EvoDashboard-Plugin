@@ -1,4 +1,4 @@
-WelcomeLastWebUsersBox EvoDashboard Plugin for MODx Evolution
+WelcomeLastWebUsersBox EvoDashboard Plugin for Evolution cms
 ==================================
 
 "Last Registered Webusers" box widget for for EvoDashboard
